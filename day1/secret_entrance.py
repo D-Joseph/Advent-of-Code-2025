@@ -1,5 +1,5 @@
 from utils.perform_rotation import perform_rotation
-from utils.read_rotation import read_rotations
+from day1.utils.read_rotations import read_rotations
 
 INITIAL_POSITION = 50
 
