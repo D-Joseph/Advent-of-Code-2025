@@ -52,7 +52,7 @@ class GiftShopResolver:
 
 if __name__ == '__main__':
     solver = GiftShopResolver()
-    # print(f"Part 1 Answer: {solver.solve_part1()}")
+    print(f"Part 1 Answer: {solver.solve_part1()}")
     print(f"Part 2 Answer: {solver.solve_part2()}")
 
 
