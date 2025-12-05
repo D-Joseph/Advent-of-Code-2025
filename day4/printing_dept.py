@@ -1,5 +1,7 @@
 from utils.read_grid import read_grid
 from utils.check_surroundings import check_surroundings
+
+
 class PrintingDeptSolver:
     def __init__(self) -> None:
         self.grid = read_grid()
@@ -11,7 +13,7 @@ class PrintingDeptSolver:
                 if item == '@' and check_surroundings(self.grid, r, c):
                     rolls += 1
         return rolls
-    
+
     def solve_part2(self) -> int:
         rolls = 0
         changed = -1
@@ -24,6 +26,7 @@ class PrintingDeptSolver:
                         changed += 1
                         self.grid[r][c] = 'x'
         return rolls
+
 
 if __name__ == '__main__':
     solver = PrintingDeptSolver()

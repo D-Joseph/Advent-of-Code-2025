@@ -1,6 +1,7 @@
 from typing import List
 
-def read_grid(path:str='./printing_dept_input.txt'):
+
+def read_grid(path: str = './printing_dept_input.txt') -> List[List[str]]:
     with open(path, 'r') as file:
         grid: List[List[str]] = []
         for line in file:

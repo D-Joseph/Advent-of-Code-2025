@@ -1,16 +1,17 @@
-def count_invalid_in_range(range, initial, splits, seen):
-    start, end = range.start, range.end
+def count_invalid_in_range(gift_range, initial, splits, seen):
+    start, end = gift_range.start, gift_range.end
     invalid_count = 0
-    id = initial[:len(initial)//splits]
+    identifier = initial[: len(initial) // splits]
 
     # Protect against starting with an id outside of the range
-    while int(id * splits) < int(start):
-        id = str(int(id) + 1)
+    while int(identifier * splits) < int(start):
+        identifier = str(int(identifier) + 1)
 
-    while int(id * splits) <= int(end):
-        if (int(id * splits) not in seen):
-            invalid_count += int(id*splits)
-            seen.add(int(id*splits))
-        id = str(int(id) + 1)
+    while int(identifier * splits) <= int(end):
+        value = int(identifier * splits)
+        if value not in seen:
+            invalid_count += value
+            seen.add(value)
+        identifier = str(int(identifier) + 1)
 
     return invalid_count
