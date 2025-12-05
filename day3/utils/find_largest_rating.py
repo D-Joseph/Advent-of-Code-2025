@@ -9,4 +9,3 @@ def find_largest_rating(bank: str, start: int, end: int) ->  Tuple[int, int]:
             maxVal = battery
             maxValIdx = i
     return maxVal, maxValIdx
-

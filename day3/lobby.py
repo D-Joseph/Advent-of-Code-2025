@@ -15,16 +15,12 @@ class LobbyResolver:
     def solve_part2(self):
         joltage_sum = 0
         for bank in self.banks:
-            last_idx = 0
+            last_idx = -1
             for i in range(12):
-                maxVal, last_idx = find_largest_rating(bank, last_idx, len(bank) - (12 - i - 1))
-                joltage_sum += (maxVal * (10 * (12 - i - 1)))
+                maxVal, last_idx = find_largest_rating(bank, last_idx + 1, len(bank) - (12 - i - 1))
+                joltage_sum += (maxVal * (10 ** (12 - i - 1)))
         return joltage_sum
 
-                
-
-
-        
 if __name__ == '__main__':
     solver = LobbyResolver()
     print(f"Part 1 Answer: {solver.solve_part1()}")
