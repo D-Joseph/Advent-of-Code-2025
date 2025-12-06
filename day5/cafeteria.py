@@ -1,5 +1,5 @@
 from utils.read_data import read_data
-
+from utils.combine_ranges import combine_ranges
 
 class CafeteriaResolver:
     def __init__(self):
@@ -26,11 +26,16 @@ class CafeteriaResolver:
 
 
     def solve_part2(self) -> int:
-        pass
+        combined = combine_ranges(self.fresh_ranges)
+        num_fresh = 0
+        for fresh_range in combined:
+            num_fresh += fresh_range.end - fresh_range.start + 1
+        return num_fresh
 
 
 if __name__ == '__main__':
     solver = CafeteriaResolver()
     print(solver.print_data())
     print(f"Part 1 Answer: {solver.solve_part1()}")
+    print(combine_ranges(solver.fresh_ranges))
     print(f"Part 2 Answer: {solver.solve_part2()}")
